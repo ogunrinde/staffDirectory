@@ -11,6 +11,9 @@ class BishopScreen extends React.Component{
     static navigationOptions = {
         header:null
     }; 
+    componentDidMount(){
+        //console.error(this.props.data.profiles);
+    }
     call = (phoneNumber) => {
         //let phoneNumber = '';
         if (Platform.OS === 'android') {
@@ -32,7 +35,7 @@ class BishopScreen extends React.Component{
                     </View>
                     {
                         this.props.data.profiles.map((profile)=>
-                         this.props.updata_data.currentdiocese == profile.current_diocese.toString() && profile.position.toLowerCase() == 'bishop' &&
+                        profile.position !== null && this.props.updata_data.currentdiocese == profile.current_diocese.toString() && profile.position.toLowerCase() == 'bishop' &&
                          <View key ={profile.id} value={profile.id}>
                             <View style={styles.second}>
                                 <Image

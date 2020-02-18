@@ -8,4 +8,6 @@ every year.
 
 The platforms allows priest to keep track to their collegues. Track their promotions, educational background, the dioceses they have worked over the years
 
+The application is a mobile app built with react native and the backend was developed using laravel Framework
+
 

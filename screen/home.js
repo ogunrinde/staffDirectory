@@ -62,7 +62,7 @@ class HomeScreen extends React.Component{
         this.setState({showthisData:val});
     } 
     showdiocese = async (val) =>{
-        //Alert.alert(val);
+        Alert.alert(val);
         await this.props.dispatch(current_diocese(val));
         this.props.navigation.navigate('tab');
     }

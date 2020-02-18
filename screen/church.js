@@ -6675,7 +6675,7 @@ class ChurchScreen extends React.Component{
         let rev = [];
         let evang = [];
         this.props.data.profiles.forEach(p => {
-            if(this.props.update_data.currentdiocese.toString() == p.current_diocese.toString()){
+            if(p.position !== null && this.props.update_data.currentdiocese.toString() == p.current_diocese.toString()){
                 if(p.position.toLowerCase() == 'vicar' || p.position.toLowerCase() == 'dean'){
                     vicar.push(p);
                 }
@@ -6689,17 +6689,17 @@ class ChurchScreen extends React.Component{
         });
         //console.error(curate);
         curate.forEach(p => {
-            if(p.status.toLowerCase() == 'rt. reverend'){
+            if(p.status !== null && p.status.toLowerCase() == 'rt. reverend'){
                 rtrev.push(p);
-            }else if(p.status.toLowerCase() == 'very reverend'){
+            }else if(p.status !== null && p.status.toLowerCase() == 'very reverend'){
                 vyrev.push(p);
-            }else if(p.status.toLowerCase() == 'venerable'){
+            }else if(p.status !== null && p.status.toLowerCase() == 'venerable'){
                 ven.push(p);
-            }else if(p.status.toLowerCase() == 'reverend canon') {
+            }else if(p.status !== null && p.status.toLowerCase() == 'reverend canon') {
                 revcan.push(p);
-            }else if(p.status.toLowerCase() == 'reverend') {
+            }else if(p.status !== null && p.status.toLowerCase() == 'reverend') {
                 rev.push(p);
-            }else if(p.status.toLowerCase() == 'evangelist') {
+            }else if(p.status !== null && p.status.toLowerCase() == 'evangelist') {
                 evang.push(p);
             }
         });
